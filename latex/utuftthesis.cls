@@ -41,6 +41,7 @@
 \RequirePackage{fancyhdr}                     % customized headers/footers
 \RequirePackage{xstring}                      % string comparison
 \RequirePackage[lastpage,totpages,user]{zref} % page counting logic
+\RequirePackage{setspace}					% linespacing
 
 %% Custom package options
 %\DeclareStringOption[00]{year}
@@ -373,7 +374,7 @@
 %
 % - fake 2 linespacing
 %
-\renewcommand{\baselinestretch}{1.655}
+\doublespacing
   
 %% Modify the \printbibliography command
 \defbibheading{bibliography}[\refs]{
@@ -458,14 +459,14 @@
   \vspace{3mm}
   \noindent 
   \rule{\linewidth}{1 mm}
-  \renewcommand{\baselinestretch}{1.05}\normalsize
+  \singlespacing\normalsize
   \begin{flushright}
   \Huge{\@title}
   \end{flushright}
   \rule{\linewidth}{1 mm}
   \vspace*{\stretch{4}}
 
-  \renewcommand{\baselinestretch}{1}\normalsize
+  \singlespacing\normalsize
   \begin{adjustbox}{minipage=65mm,right}
   \thesistype{\l@nguage}\\
   \university{\l@nguage}\\
@@ -492,7 +493,7 @@
   \fi
   
   \end{titlepage}
-  \renewcommand{\baselinestretch}{1.655}\normalsize
+  \doublespacing\normalsize
   \clearpage
 }
 
@@ -502,7 +503,7 @@
   \setlength{\headheight}{0 pt}
   \setlength{\headsep}{0 pt}
   \addtolength\topmargin{-0.54 cm}
-  \renewcommand{\baselinestretch}{1}\normalsize
+  \singlespacing\normalsize
   \clearpage
   \pagenumbering{alph}
   \addtocounter{page}{#2}
@@ -535,7 +536,7 @@
   \setlength{\headheight}{12 pt}%
   \setlength{\headsep}{24 pt}%
   \setlength{\topmargin}{0 mm}%
-  \renewcommand{\baselinestretch}{1.655}%
+  \doublespacing
   \normalsize%
   % roman numbering for table of contents etc.
   \pagenumbering{roman}
@@ -570,7 +571,7 @@
   \fi
   \pagenumbering{arabic}
   \setcounter{page}{1}
-  \renewcommand{\baselinestretch}{1.655}
+  \doublespacing
   \pagestyle{fancy}
   \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername\ \thechapter.\ ##1}}{}}
   \lhead{\leftmark}
