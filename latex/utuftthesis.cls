@@ -234,10 +234,8 @@
 \RequirePackage{csquotes}               % quotations
 
 % month names
-\langfin{
-  \RequirePackage[fi,en-US]{datetime2}
-}{
-  \RequirePackage[en-US,fi]{datetime2}
+\AtEndPreamble{
+  \RequirePackage[useregional,calc]{datetime2}
 }
 
 
@@ -293,14 +291,6 @@
     \case{di}{\langchoose{#1}{Diplomityö}{Master of Science (Tech) Thesis}}%
     \default{\p@btype}%
   \end{switch}}
-
-%% constructs a month name for datetime2
-%% @see TeX Book, Chapter 7: How TeX Reads What You Type (p 40)
-%% @see http://ftp.acc.umu.se/mirror/CTAN/macros/latex/contrib/datetime2/datetime2.pdf
-%% note: for some languages (en), need to provide a macro such as
-%%   DTM<language>Monthname -> DTM<language>monthname
-\newcommand{\DTMenglishMonthname}[1]{\DTMenglishmonthname{#1}}
-\newcommand{\monthname}[1]{\csname DTM#1Monthname\endcsname}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -436,28 +426,30 @@
   \vspace*{\stretch{1}}
   \vspace{3mm}
   \noindent 
-  \rule{\linewidth}{1 mm}
+  %\rule{\linewidth}{1 mm}
   \singlespacing\normalsize
-  \begin{flushright}
+  \begin{center}
   \Huge{\@title}
-  \end{flushright}
-  \rule{\linewidth}{1 mm}
+  \end{center}
+  %\rule{\linewidth}{1 mm}
   \vspace*{\stretch{4}}
 
   \singlespacing\normalsize
-  \begin{adjustbox}{minipage=65mm,right}
-  \thesistype{\l@nguage}\\
-  \university{\l@nguage}\\
-  \department{\l@nguage}\\
-  \labname{\l@nguage}\\
-  \ye@r\\
-  \@author
-  \ifdefstring{\s@pervisors}{none}{}{\\
-    \\
-    \supervisorstext:
-    \expandafter\forcsvlist\expandafter\\\expandafter{\s@pervisors}
-  }
-  \end{adjustbox}
+  %\begin{adjustbox}{minipage=65mm,right}
+    \begin{flushright}
+      \textsc{\university{\l@nguage}}\\
+      \department{\l@nguage}\\
+      \thesistype{\l@nguage}\\
+      \labname{\l@nguage}\\
+      \DTMMonthname{\m@nth} \ye@r \\
+      \@author{}%
+      \ifdefstring{\s@pervisors}{none}{}{\break
+        \\
+        \supervisorstext:
+        \expandafter\forcsvlist\expandafter\\\expandafter{\s@pervisors}
+      }
+    \end{flushright}
+  %\end{adjustbox}
   \vspace*{\stretch{1}}%
   \ifutuftthesis@turnitinchecked
     \ifutuftthesis@turnitinnewpage
@@ -465,9 +457,9 @@
       \thispagestyle{empty}
       \vspace*{\stretch{1}}
     \else
-      \\
+      \par
     \fi
-    \scriptsize \noindent{\turnitin}
+    \scriptsize \begin{center} \noindent{\turnitin} \end{center}
   \fi
   
   \end{titlepage}
@@ -496,7 +488,7 @@
   \thesistype{#1}, %
   \pagecounttext{#1} \\
   \labname{#1} \\
-  \monthname{#1}{\m@nth} \ye@r\\
+  \DTMMonthname{\m@nth} \ye@r\\
   \rule{\linewidth}{1 pt}%
   \setlength{\parindent}{0em}%
   \\
