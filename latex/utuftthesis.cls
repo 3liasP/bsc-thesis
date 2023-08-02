@@ -1,24 +1,3 @@
-% version 2.5 2019/12/20 Bugfixes: Switched to pdf/a a-2b, list of acronyms with
-%                                  nomencl, fix tests, switch to a custom Dockerfile,
-%                                  add support+example demonstrating minted
-% version 2.4 2019/05/28 Bugfixes: Fixed app. page count for documents with multipage
-%                                  floating content in appendices, adjustments to
-%                                  options and font handling, documentation, options
-%                                  for handling long urls in the bibliography,
-%                                  removed unnecessary deps titlecaps & sverb
-% version 2.3 2019/05/02 Bugfixes: PDF/A-1b support (via pdfx), moved chead to cfoot,
-%                                  updated UTU logos
-% version 2.2 2018/10/06 Bugfixes: Got rid of startappendices and startpages.
-%                                  various fixes. cleanups
-% version 2.1 2018/10/02 Bugfixes: removed redundant tutkielma.tex, fixed issues with
-%                                  appendices, small caps, added an option to enable
-%                                  the truetype times new roman font
-% version 2.0 2018/08/29 new version using document classes, xelatex, biblatex, and
-%                        additional TeX scripting. Jari-Matti Mäkelä (jmjm@iki.fi)
-% version 1.3+ 2017/10/01 - 2016/9/22 additions marked "JH:", modified for use in
-%                                     tex.soft.utu.fi, Johannes Holvitie (jjholv@utu.fi)
-% version 1.3 2015/09/05 Sami Nuuttila (samnuutt@utu.fi)
-
 % ------------------------------
 % How to use? Store the file in
 % 1) Windows XP C:\Documents and Settings\<user name>\texmf\tex\latex\local\
@@ -30,46 +9,47 @@
 % ------------------------------
 
 \NeedsTeXFormat{LaTeX2e}[2015/01/01]
-\ProvidesClass{utuftthesis}[2020/06/18 UTU FT dept BSc/MSc thesis]
+\ProvidesClass{utuftthesis}[2023/08/02 UTU FT dept BSc/MSc thesis]
 
 %% package requirements for this template
-\RequirePackage{kvoptions}                    % keyval-options, required by this class definition
-\RequirePackage{adjustbox}                    % front page box on the right
-\RequirePackage{etoolbox}                     % misc. tools
-\RequirePackage{ifthen}                       % mainly: \langchoose and \switch (\ifstrequal doesn't work here?)
-\RequirePackage{ifxetex}                      % for xelatex/pdflatex font selection
-\RequirePackage{fancyhdr}                     % customized headers/footers
-\RequirePackage{xstring}                      % string comparison
-\RequirePackage[lastpage,totpages,user]{zref} % page counting logic
-\RequirePackage{setspace}					% linespacing
+\RequirePackage{kvoptions}                     % keyval-options, required by this class definition
+\RequirePackage{adjustbox}                     % front page box on the right
+\RequirePackage{etoolbox}                      % misc. tools
+\RequirePackage{ifthen}                        % mainly: \langchoose and \switch (\ifstrequal didn't work)
+\RequirePackage{ifxetex}                       % xelatex/pdflatex font selection
+\RequirePackage{fancyhdr}                      % custom headers/footers
+\RequirePackage{xstring}                       % string comparison
+\RequirePackage[lastpage,totpages,user]{zref}  % page counting logic
+\RequirePackage{setspace}                      % linespacing
 
 %% Custom package options
 %\DeclareStringOption[00]{year}
-\DeclareStringOption[draft]{version}         % draft/final version
-\DeclareStringOption[a4paper]{paper}         % @see ctan/macros/latex/base/classes, 3.1 Setting Paper Size
-\DeclareStringOption[finnish]{language}      % document's main language
-\DeclareStringOption[ieee]{bibstyle}         % document's bibliography style
-\DeclareStringOption[-1]{pagecountdelta}     % workaround for bugs in the app page count
+\DeclareStringOption[draft]{version}           % draft/final version
+\DeclareStringOption[a4paper]{paper}           % @see ctan/macros/latex/base/classes, 3.1 Setting Paper Size
+\DeclareStringOption[oneside]{sides}           % oneside/twoside
+\DeclareStringOption[finnish]{language}        % document's main language
+\DeclareStringOption[ieee]{bibstyle}           % document's bibliography style
+\DeclareStringOption[-1]{pagecountdelta}       % workaround for bugs in the app page count
 \DeclareStringOption[a-2b,mathxmp]{pdfaconformance}  % PDF-A conformance level (a-1b, a-2b, a-2u, a-3b, a-3u, or 'none')
-\DeclareStringOption[split]{biburlbreak}     % how to handle long urls in bibliography ('ragged', 'split', or 'none')
-\DeclareStringOption[times]{mainfont}        % pdftex: main font package (lmodern, fourier, ...), special value: 'times', 'none'
-                                             % xetex: main font name (Arial, Comic Sans, ...), special value: 'times' enables Times New Roman, 'none'
-\DeclareBoolOption[true]{hidechapters}       % hide the verbose chapter title text
-\DeclareBoolOption[true]{hidelinks}          % hide the underlining of links (PDF-A & hyperref)
-\DeclareBoolOption[false]{countbibpages}     % page count = content | content + bibliography pages?
-\DeclareBoolOption[false]{sharelatex}        % assume compilation inside sharelatex
-\DeclareBoolOption[false]{minted}            % use minted instead of listings (must enable -shell-escape!)
-\DeclareBoolOption[true]{emptyfirstpages}    % hide the header/footer of the first page of each chapter
-\DeclareBoolOption[true]{turnitinchecked}    % turnitin text
-\DeclareBoolOption[false]{turnitinnewpage}   % turnitin text on a new page
-\DeclareBoolOption[false]{hidetocpagenum}    % hide the roman page numbers in toc / lists
+\DeclareStringOption[split]{biburlbreak}       % how to handle long urls in bibliography ('ragged', 'split', or 'none')
+\DeclareStringOption[times]{mainfont}          % pdftex: main font package (lmodern, fourier, ...), special value: 'times', 'none'
+                                               % xetex: main TTF font name (Arial, ...), special value: 'times' enables Times New Roman, 'none'
+\DeclareBoolOption[true]{hidechapters}         % hide the verbose chapter title text
+\DeclareBoolOption[true]{hidelinks}            % hide the underlining of links (PDF-A & hyperref)
+\DeclareBoolOption[false]{countbibpages}       % page count = content | content + bibliography pages?
+\DeclareBoolOption[false]{sharelatex}          % assume compilation inside sharelatex
+\DeclareBoolOption[false]{minted}              % use minted instead of listings (must compile with '-shell-escape')
+\DeclareBoolOption[true]{emptyfirstpages}      % hide the header/footer of the first page of each chapter
+\DeclareBoolOption[true]{turnitinchecked}      % turnitin text
+\DeclareBoolOption[false]{turnitinnewpage}     % turnitin text on a new page
+\DeclareBoolOption[false]{hidetocpagenum}      % hide the roman page numbers in toc / lists
 
 
 %% Process given options
 \ProcessKeyvalOptions*
 
 %% Load base
-\LoadClass[\utuftthesis@paper,12pt]{report}
+\LoadClass[\utuftthesis@paper,\utuftthesis@sides,12pt]{report}
 
 %% !! Update this only if the document's main language is not finnish or english !!
 %% The template supports one of three options
@@ -180,6 +160,7 @@
     %% @see https://en.wikipedia.org/wiki/PDF/A#Conformance_levels_and_versions
     \RequirePackage{colorprofiles}
     \RequirePackage[\utuftthesis@pdfaconformance]{pdfx}
+    
     %% fix a temporary bug in texlive 2021
     \catcode30=12
     
@@ -201,28 +182,30 @@
 \RequirePackage{verbatim}               % LyX generated \begin{comment}\end{comment}
 \RequirePackage{graphicx}               % \includegraphics{file}, works without file extensions
 \RequirePackage{amssymb,amsthm,amsmath} % ams-packages for maths
-%\RequirePackage{filecontents}           % to output the pdfx metadata file
 \RequirePackage{nomencl}                % acronyms, https://tex.stackexchange.com/questions/154060/nomenclature-acronym-or-glossary
                                         % https://www.overleaf.com/learn/latex/Nomenclatures
 
+%% inclusion of source code
+%% - listings is more widely supported, but does not handle utf-8
+%% - minted supports utf-8, but requires external tools: Python & pygments
+%% - minted also requires compiling the document with -shell-escape
 \ifutuftthesis@minted
-\RequirePackage{minted}                 % handle inclusion of source code. Requires Python & pygments.
+  \RequirePackage{minted}
 \else
-\RequirePackage{listings}               % handle inclusion of source code.
-                                        % note: does not support utf-8 properly!
-\newenvironment{minted}{\verbatim}{\endverbatim}
-\newcommand{\listingscaption}{\sourcecode}
+  \RequirePackage{listings}
+  \newenvironment{minted}{\verbatim}{\endverbatim}
+  \newcommand{\listingscaption}{\sourcecode}
 \fi
 
 %% some more suggestions
 %\RequirePackage[l2tabu, orthodox]{nag} % checks whether outdated latex features are being used
 %\RequirePackage[all,warning]{onlyamsmath}
-%\RequirePackage{titlecaps}             % capitalized words in titles
-%\RequirePackage{microtype}
-%\RequirePackage{amssymb}
-%\RequirePackage{fixmath}
-%\RequirePackage[euro]{isonums}
+%\RequirePackage{titlecaps}              % capitalized words in titles
+%\RequirePackage{microtype}              % micro-typographic extensions
+%\RequirePackage{fixmath}                % ISO compliant math typesetting
+%\RequirePackage[euro]{isonums}          % euro style number formatting
 %\RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
+%\RequirePackage{filecontents}           % to output the pdfx metadata file
 
 % bold acronyms in the list of acronyms
 \renewcommand{\nomlabel}[1]{{\textbf{#1}}}
@@ -237,7 +220,8 @@
   \setcounter{biburlucpenalty}{8000}
 }{}
 
-%% bibliography, new engine
+%% bibliography
+%% - uses the biber / biblatex engine: supports utf-8 and easier formatting
 \ifdefstring{\utuftthesis@biburlbreak}{ragged}{
   \RequirePackage[style=\utuftthesis@bibstyle,backend=biber,block=ragged]{biblatex}
 }
@@ -248,10 +232,11 @@
 \RequirePackage{fvextra}                % minted
 \RequirePackage{csquotes}               % quotations
 
+% month names
 \langfin{
-  \RequirePackage[fi,en-US]{datetime2}        % month names
+  \RequirePackage[fi,en-US]{datetime2}
 }{
-  \RequirePackage[en-US,fi]{datetime2}        % month names
+  \RequirePackage[en-US,fi]{datetime2}
 }
 
 
@@ -316,17 +301,13 @@
 \newcommand{\DTMenglishMonthname}[1]{\DTMenglishmonthname{#1}}
 \newcommand{\monthname}[1]{\csname DTM#1Monthname\endcsname}
 
-%% -- end of localization --
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % setup document appearance
+%  - 1 pt == 1/72 inch == 0.35 mm
 %
 
-% fix page size
-%
-%  - page width: 
+% Page width: 
 %     1inch             +
 %      \hoffset         +
 %      \oddsidemargin   +
@@ -334,7 +315,21 @@
 %      \marginsep       +
 %      \marginparwidth
 %
-%  - page height: 
+% odd page:  left margin 4cm, right 2cm
+% even page: left margin 2cm, right 4cm
+%
+\setlength{\hoffset}{0 mm}
+\setlength{\marginparsep}{11 pt}
+\setlength{\marginparwidth}{2 cm}
+\addtolength\marginparwidth{-11 pt}
+\setlength{\textwidth}{\paperwidth}
+\addtolength\textwidth{-60 mm}
+\setlength{\oddsidemargin}{-1 in}
+\addtolength\oddsidemargin{40 mm}
+\setlength{\evensidemargin}{-1 in}
+\addtolength\evensidemargin{20 mm}
+
+% Page height: 
 %     1inch             +
 %      \voffset         +
 %      \topmargin       +
@@ -344,36 +339,17 @@
 %      \footnotesep     +
 %      \footheigth 
 %
-%  - 1 pt == 1/72 inch == 0.35 mm
-%
-% page width... left margin 4cm, right 2cm
-%
-\setlength{\hoffset}{0mm}
-\setlength{\marginparsep}{0mm}
-\setlength{\marginparwidth}{0mm}
-\setlength{\textwidth}{\paperwidth}
-\addtolength\textwidth{-60 mm}
-\setlength{\oddsidemargin}{-1 in}
-\addtolength\oddsidemargin{40 mm}
-
-% page height... textheight starts at ~4cm from top, 
-% i.e. 1 in + 12 pt + 24 pt = 1.5 in 
+% textheight starts at ~4cm from top, 
+% 1 in + 15 pt + 25 pt = ~3.95cm
 %
 \setlength{\voffset}{0 mm}
 \setlength{\topmargin}{0 mm}
-\setlength{\headheight}{14.5 pt}
-\setlength{\headsep}{24 pt}
-\setlength{\textheight}{230mm}
+\setlength{\headheight}{15 pt}
+\setlength{\headsep}{25 pt}
+\setlength{\textheight}{230 mm}
 \setlength{\footnotesep}{12 pt}
 
- 
-% setup linespacings to suit to the (stupid) requirement of double spacing
-%
-% - fake 1.5 linespacing
-%    \renewcommand{\baselinestretch}{1.241}
-%
-% - fake 2 linespacing
-%
+% setup linespacings to suit to the requirement of double spacing
 \doublespacing
   
 %% Modify the \printbibliography command
