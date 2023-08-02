@@ -1,4 +1,4 @@
-FROM konttipoju/tinytex:2019-12g
+FROM registry.gitlab.utu.fi/tech/soft/thesis/builder:latest
 
 ###
 ## Prepare for development with VSCode.
