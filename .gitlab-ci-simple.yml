@@ -24,6 +24,7 @@ validate:
 pages:
   stage: deploy
   script:
+    - cp latex/thesis.pdf .
     - wget https://tech.utugit.fi/soft/tools/sitegen/sitegen.jar -O sitegen.jar
     - java -jar sitegen.jar -pdfjs
   only:
