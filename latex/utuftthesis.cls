@@ -206,6 +206,7 @@
 %\RequirePackage[euro]{isonums}          % euro style number formatting
 %\RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
 %\RequirePackage{filecontents}           % to output the pdfx metadata file
+%\RequirePackage[section]{placeins}      % see https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Keeping_floats_in_their_place
 
 % bold acronyms in the list of acronyms
 \renewcommand{\nomlabel}[1]{{\textbf{#1}}}
@@ -305,6 +306,7 @@
 %
 % setup document appearance
 %  - 1 pt == 1/72 inch == 0.35 mm
+% see: https://www.overleaf.com/learn/latex/Single_sided_and_double_sided_documents
 %
 
 % Page width: 
