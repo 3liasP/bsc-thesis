@@ -288,7 +288,9 @@
     \case{tkk}{\langchoose{#1}{TkK-tutkielma}{Bachelor's Thesis}}%
     \case{luk}{\langchoose{#1}{LuK-tutkielma}{Bachelor's Thesis}}%
     \case{gradu}{\langchoose{#1}{Pro gradu -tutkielma}{Master of Science Thesis}}%
+    \case{msc}{\langchoose{#1}{Pro gradu -tutkielma}{Master of Science Thesis}}%
     \case{di}{\langchoose{#1}{Diplomityö}{Master of Science (Tech) Thesis}}%
+    \case{msctech}{\langchoose{#1}{Diplomityö}{Master of Science (Tech) Thesis}}%
     \default{\p@btype}%
   \end{switch}}
 
@@ -544,11 +546,11 @@
   \doublespacing
   \pagestyle{fancy}
   \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername\ \thechapter.\ ##1}}{}}
-  \lhead{\leftmark}
-  \chead{}
-  \rhead{\thepage}
+  \fancyhead{}
   \fancyfoot{}
-  \cfoot{\version}
+  \fancyhead[LE,RO]{\thepage}
+  \fancyhead[RE,LO]{\leftmark}
+  \fancyfoot[C]{\version}
 }       
 
 %% postpone the doc style through these sections
