@@ -1,7 +1,5 @@
 # due to https://docs.docker.com/docker-hub/download-rate-limit/
 # the texlive image is hosted @ https://gitlab.utu.fi/tech/soft/thesis-builder
-always-run:
-  script: echo 'this should always run'
 
 image: registry.gitlab.utu.fi/tech/soft/thesis/builder:latest
 
