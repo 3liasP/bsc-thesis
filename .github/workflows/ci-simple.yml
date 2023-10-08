@@ -17,8 +17,7 @@ jobs:
           texlive-version: '2021'
       - name: Build LaTeX document
         run: |
-          cd latex
-          latexmk -pdf --shell-escape thesis.tex
+          latexmk -pdf --shell-escape latex/thesis.tex
       - name: Validate PDF/A
         run: |
           pdfa-validate latex/thesis.pdf | grep '^PASS'
