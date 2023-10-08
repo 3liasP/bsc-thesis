@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set up TeXLive
-        uses: dante-ev/setup-texlive@v1
+        uses: dante-ev/latex-action@edge
         with:
           texlive-version: '2021'
       - name: Build LaTeX document
