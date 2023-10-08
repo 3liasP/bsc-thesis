@@ -1,5 +1,7 @@
 # A template for BSc / MSc theses
 
+Testing CI implementation on GitLab side.
+
 Document template suitable for use as a LaTeX master-file for bachelor's /
 master's thesis in University of Turku Department of Computing.
 
