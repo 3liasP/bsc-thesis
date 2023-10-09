@@ -10,7 +10,7 @@ This repository hosts:
 - CI/CD is done in GitLab side:
     - Compiles completed LaTeX document into PDF as an artifact with latexmk
     - This artifact PDF is then passed on to be deployed with GitLab pages
-    - A live demo is online at [GitLab generated page](ecpelt.utugit.fi/bsc-thesis-ci/)
+    - A live demo is online at [GitLab generated page](https://ecpelt.utugit.fi/bsc-thesis-ci/)
 
 ## Template
 
