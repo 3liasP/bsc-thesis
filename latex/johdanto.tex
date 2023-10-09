@@ -1,29 +1,35 @@
 \chapter{Johdanto} \label{Johdanto}
 
-Viittaaminen lukuun \ref{Johdanto}, toiseen lukuun \ref{Toinen luku},
-alilukuun \ref{Alaotsikko}, tätä alempaan lukuun \ref{Alempiotsikko},
-alimpaan lukuun \ref{Alinotsikko}, kuvaan \ref{Kuvaesimerkki} ja
-tauluun \ref{tab:Taulukon-otsikko-tulee}.
+Yrityksillä on tyypillisesti suuria määriä tuotetietoja.
+
+Tuotetietojen raportointi voidaan nähdä yhtenä tuotten elinkaaren hallintajärjestelmän (PLM\nomenclature[PLM]{PLM}{engl. Production Lifecycle Management, tuotteen elinkaaren hallinta}) ydinominaisuuksista. Luotettavan, tehokkaan ja mukautuvan raportointityökalun avulla PLM-järjestelmä voi tuottaa enemmän lisäarvoa sen käyttäjille tarjoamalla mahdollisuuden jakaa, tallentaa ja analysoida tuotedataa eri tiedostoformaateissa. \ref{Johdanto}
+
+PLM-järjestelmien tietomallit voidaan jakaa dokumentti- ja relaatiodata-pohjaisiin tietorakenteisiin. Koska Sovelia PLM -järjestelmä perustuu relaatiodata-pohjaiseen tietomalliin, myös tässä tutkielmassa käsitellän raportointia nimenomaan relaatiodatan pohjalta.
+
+Tiedostoformaattien valinta raportoinnille perustuu asiakaspalautteeseen.
+
+Tämän työn tarkoituksena oli toteuttaa raportointityökalu osaksi Sovelia PLM -järjestelmää. Raportointityökalu integroituu osaksi Sovelian nykyistä lähdekoodia ja sen palvelinkomponentteja. Ohjelmakokonaisuus koostu palvelinkomponentista, joka tuottaa raporttitiedoston raportoinnin kohteena olevasta objektista, sekä konfigurointityökalusta, jonka avulla pääkäyttäjä voi muokata raporttien ulkonäköä ja rakennetta.
+
 
 Kuva liitetään seuraavasti. ShareLaTeXin autocomplete rakentaa koko
 begin-end blockin yleensä puolestasi.
 
 \begin{figure}
-\centering \includegraphics[width=0.5\textwidth]{kuvat/utulogoen}
-\caption{Kuvan otsikko}
-\label{Kuvaesimerkki} 
+	\centering \includegraphics[width=0.5\textwidth]{kuvat/utulogoen}
+	\caption{Kuvan otsikko}
+	\label{Kuvaesimerkki}
 \end{figure}
 
 Taulukkoja tehdään seuraavasti.
 
 \begin{table}
-\centering{}\caption{Taulukon otsikko tulee taulun yläpuolelle\label{tab:Taulukon-otsikko-tulee}}
-\begin{tabular}{l|c|r|}
-Taulun  & elementit  & erotetaan \tabularnewline
-\hline 
-toisistaan  & et-merkillä  & \tabularnewline
-soluja voi myös  &  & jättää tyhjäksi \tabularnewline
-\end{tabular}
+	\centering{}\caption{Taulukon otsikko tulee taulun yläpuolelle\label{tab:Taulukon-otsikko-tulee}}
+	\begin{tabular}{l|c|r|}
+		Taulun          & elementit   & erotetaan \tabularnewline
+		\hline
+		toisistaan      & et-merkillä & \tabularnewline
+		soluja voi myös &             & jättää tyhjäksi \tabularnewline
+	\end{tabular}
 \end{table}
 
 Kirjallisuusviitteet lisätään bib-muodossa bibliografia tiedostoon
@@ -95,4 +101,4 @@ Mauris laoreet maximus aliquet. Mauris at gravida elit. Ut nec lobortis
 elit. Sed lacinia nisi in ex sollicitudin, ac consequat lacus imperdiet.
 Etiam et velit eu lacus maximus faucibus. Vestibulum ante ipsum primis
 in faucibus orci luctus et ultrices posuere cubilia Curae; Donec vulputate
-tellus ullamcorper odio sodales, non scelerisque neque eleifend. 
+tellus ullamcorper odio sodales, non scelerisque neque eleifend.

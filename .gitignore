@@ -1,3 +1,4 @@
+# Latex things...
 *.aux
 *.toc
 *.bbl
@@ -20,3 +21,5 @@
 *.ilg
 *.synctex.gz
 _minted-*/
+# Dev env stuff...
+.vscode/

@@ -1,5 +1,5 @@
 all:
-	latexmk -pdf -shell-escape thesis.tex
+	latexmk -f -pdf -shell-escape -output-directory="output" thesis.tex
 
 clean:
 	latexmk -CA thesis.tex
