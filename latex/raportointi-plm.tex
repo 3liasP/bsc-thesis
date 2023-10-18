@@ -1,14 +1,23 @@
 \chapter{Raportointi ja PLM järjestelmät} \label{Raportointi ja PLM järjestelmät}
 
-\section{PLM-strategia ja PLM-järjestelmät} \label{PLM-järjestelmät}
+\section{PLM-strategia ja PLM-järjestelmät lyhyesti} \label{PLM-järjestelmät}
 
 Laajempana käsitteenä tuotteen elinkaaren hallinta eli PLM voidaan nähdä yrityksen strategiana hallita tuotetietoja. PLM strategiana koostuu tuotteista, organisaatioista, työmenetelmistä, prosesseista, ihmisistä ja lopulta usein myös tietoteknisestä elinkaaren hallintajärjestelmästä.
+
+Tuotteen elinkaari voidaan jakaa alku-, keski- ja loppuvaiheeseen. Tuotteen elinkaaren pääpiirteet on hyvä ymmärtää, jotta PLM-käsitettä voidaan tarkastella syvällisemmin. Bouhaddou (2012) määrittelee vaiheet ja niiden piirteet seuraavasti:
+
+\begin{itemize}
+	\item Alkuvaiheessa tuoteen vaatimuksia määritellään ja tuote on luonnosvaiheessa. Luonnosvaiheessa tuotetta voidaan kutsua prototyypiksi (engl. prototype) tai mallinnokseksi (engl. mockup).
+	\item Keskivaiheessa tuote siirtyy tuotantoon ja valmistukseen. Tässä vaiheessa toteutetaan laadunvalvontaa ja kasaamista, ja voidaan puhua jo varsinaisesta tuotteesta. Valmis tuote siirtyy jakemluverkoston kautta itse asiakkaalle. Kun tuote on asiakkaalla, korostuu tuotteen käyttö sekä mahdollinen huolto ja asiakastuki.
+	\item Loppuvaiheessa tuotteen elinkaaari päättyy. Tuotetteen valmistusta ei koeta enään tarpeelliseksi, joten tässä vaiheessa huomio keskittyy tuotannon lopettamiseen ja tuotteen kierrätykseen.
+\end{itemize}
+\cite{bouhaddou_plm_2012}
 
 Koska PLM-strategia keskittyy olennaisesti tuotedatan hallintaan, on PLM-ohjelmisto olennainen osa strategian hyödyntämistä käytännössä. PLM-järjestelmän kehittäjän tulee kuitenkin toimia yhteistyössä asiakkaiden kanssa, jotta tuotteiden elinkaaren eri vaiheet ja prosessit voidaan implementoida osaksi ohjelmiston toimintoja. PLM-käsitteeseen liittyvien määritelmien lisäksi on tärkeää esitellä PLM-strategian ja -ohjelmistojen hyötyjä, jotta niiden hyödyntämisen motiivit voidaan ymmärtää. Tarkoituksena on siis vastata siihen, miksi ylipäätään PLM-järjestelmiä käytetään ja kehitetään. \cite{alemanni_key_2008}
 
 \subsection{PLM strategian hyödyt ja merkitys} \label{PLM strategian hyödyt}
 
-PLM strategian hyötyjä on käsitelty laajasti \cite{alemanni_key_2008} \cite{rivest_product_2012}. Strategian hyödyt voidaan jakaa kahteen osa-alueeseen: lyhyen ja pitkän aikavälin hyötyihin. PLM-järjestelmien tarkoituksena on taas mahdollistaa PLM-strategian käyttöönottaminen. Näiden järjestelmien pääasiallisena tarkoituksena on koota tietoa yrityksen tuotteiden koko elinkaaren vaiheista keskitettyyn tietojärjestelmään. Tämä mahdollistaa laajojen tuotekantojen johdonmukaisen ja keskitetyn hallinnan yhteistyössä yrityksen eri osastojen ja kumppaneiden välillä.
+PLM strategian hyötyjä on käsitelty laajasti \cite{alemanni_key_2008} \cite{rivest_product_2012}. Strategian hyödyt voidaan jakaa kahteen osa-alueeseen: lyhyen ja pitkän aikavälin hyötyihin. PLM-järjestelmien tarkoituksena on taas mahdollistaa PLM-strategian käyttöönottaminen. Näiden järjestelmien pääasiallisena tarkoituksena on koota tietoa yrityksen tuotteiden koko elinkaaren vaiheista keskitettyyn tietojärjestelmään. Tämä mahdollistaa laajojen tuotekantojen johdonmukaisen ja keskitetyn hallinnan yhteistyössä yrityksen eri osastojen ja kumppaneiden välillä. Konkreettisena esimerkkinä nähdään Lee, ym. (2008) toteuttamasta tutkimuksesta PLM:n hyödyntämisestä ilmailualalla: IBM-Dassaultin PLM-järjestelmää käytettiin lentokoneiden elinkaaren hallinnassa ja ohjelmiston hyödyntäminen laski valmistusaikaa 16:sta kuukaudesta seitsemään kuukauteen. Lisäksi Teamcenter PLM -järjestelmä laski tuotantosykleihin käytettyä aikaa 35:llä prosentilla ja valmistusaika 66:lla prosentilla. Keskitetyssä järjestelmässä myös lentokoneiden huoltotarve voitiin ottaa paremmin huomioon jo suunnitteluvaiheessa, mikä suoraviivaisti myös tuotteiden huoltoa niiden elinkaaren aikana. \cite{lee_product_2008}
 
 \subsubsection{Lyhyen aikavälin hyödyt} \label{Lyhyen aikavälin hyödyt}
 
@@ -19,15 +28,19 @@ Lyhyellä aikavälillä PLM-strategia ja PLM-järjestelmän käyttöönotto voi 
 Pidemmällä aikavälillä hyödyt näkyvät konkreettisemmin PLM-strategiaa hyödyntävien yritysten tunnusluvuissa, erityisesti myyntikatteessa. PLM-järjestelmien keskeinen hyöty on prosessien suoraviivaistaminen, mikä johtaa usein tuotteiden saamiseen nopeammin ja useimmin markkinoille. Kun tuotteet pääsevät nopeammin suunniteltusta markkinoille, niiden suunnitteluun ja kehittämiseen käytetyt kustannukset laskevat. \cite{bouhaddou_plm_2012} \cite{alemanni_key_2008}
 
 
-\section{Osaluettelo PLM-järjestelmän sydämenä} \label{Raportointi}
+\section{Osaluettelo PLM-järjestelmän sydämenä} \label{Osaluettelo PLM-järjestelmän sydämenä}
 
 Yksi PLM-järjestelmän tärkeimmistä toiminnallisuuksista on tuotteen osaluettelon (BOM\nomenclature[BOM]{BOM}{engl. Bill of Materials, osaluettelo, tuoterakenne}) esittäminen organisoidusti. \cite{david_what_2016} Yksinkertaisuudessaan osaluettelo on lista kaikista osista, joita tarvitaan tuotteet valmistamiseen. Osaluettelossa jokainen yksittäiseen osaan voidaan liittää useita tietokenttiä kuten valmistaja, versio, materiaali, määärä. Osaluettelo koostuu usein hierarkisesti osakokoonpanoista, välikokoonpanoista, osakomponenteista ja yksittäisistä osista, eli se kerää dataa siitä, kuinka eri komponentit ovat riippuvaisia toisistaan. Osaluetteloa voidaan käyttää viestintään esimerkiksi valmistuskumppanien välillä tai se voidaan rajoittaa yhteen tuotantoyksikköön.  \cite{jones_visualizing_2023}
 
 
-\section{Raportointi}
+\section{Raportointi} \label{Raportointi}
 
 Raportoinnin määritelmä, merkitys, jne...
 
-\subsection{Raportointi PLM-järjestelmässä}
+\subsection{Raportointi PLM-järjestelmässä} \label{Raportointi PLM-järjestelmässä}
 
 Koska PLM:n tarkoituksena mahdollistaa koko tuotantoketjun yhteistyön asiakkaiden, kehittäjien, toimittajien ja valmistajien välillä tuotteen eri elinkaaren vaiheissa, \cite{bouhaddou_plm_2012} on tärkeää että tuotetieto elinkaaren eri vaiheissa on dokumentoitavissa, analysoitavissa ja helposti jaettavissa. Vaikka PLM-järjestelmien tietomallit ovat usein ohjelmistokohtaisia ja harvemmin standardinomaisia \cite{SritiMohamed-Foued2012PTaS} on tärkeää, että tuotedataa on silti mahdollista viedä järjestelmän ulkopuolelle tallennettavaksi ja jaettavaksi. Tätä tarkoitusta varten monet PLM-järjestelmät tarjoavat "raportointimoottorin" osana PLM-ohjelmistoa, jonka tarkoituksena on kerätä ja mahdollisesti myös analysoida dataa kokoamalla sitä yleisimpiin tiedostoformaatteihin.
+
+\subsubsection{Raportointimooottorit} \label{Raportointimoottorit}
+
+Miksi raportoida, mitä tarkoitetaan raportointimoottorilla jne...

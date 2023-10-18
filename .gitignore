@@ -23,3 +23,5 @@
 _minted-*/
 # Dev env stuff...
 .vscode/
+# Zotero exports
+Exported Items.bib
