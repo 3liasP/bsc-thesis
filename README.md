@@ -6,6 +6,7 @@
 This is repository is originally forked from a [document template](https://gitlab.utu.fi/ttweb/thesis) to be used as a LaTeX master-file for bachelor's thesis in University of Turku Department of Computing.
 
 ## Contents
+
 This repository hosts:
 - My BSc thesises LaTeX source files
 - CI/CD is done in GitLab side:
