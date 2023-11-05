@@ -83,45 +83,7 @@ page counting to work!
 
 \appchapter{Liitedokumentti}
 
-Liitteen ohjelmakoodi \ref{alg:Tyyppiluokka-Monad} kuvaa matemaattisen
-monadirakenteen pohjalta rakentuvan Haskellin tyyppiluokan. Tyyppiluokan
-voi nähdä eräänlaisena abstraktina ohjelmointirajapintana (API\nomenclature[API]{API}{Application Programming Interface}),
-joka muodostaa ohjelmoijalle abstraktin ohjelmointikielen käyttöliittymän
-(UI\nomenclature[UI]{UI}{User Interface}). 
-
-\begin{algorithm}[tbh]
-\begin{minted}{haskell}
-class Monad m where
-    ( >>= )         :: m a -> (a -> m b) -> m b
-    return          :: a                 -> m a
-
-    fail            :: String            -> m a
-    (>>)            :: m a -> m b        -> m b
-    m >> k          =  m >>= \_ -> k       -- default
-
-instance Monad IO where  ...               -- omitted
-\end{minted}
-
-\caption{Tyyppiluokka 'Monad'.\label{alg:Tyyppiluokka-Monad}}
-\end{algorithm}
-
-\newpage{}
-
-Ensimmäisen liitteen toinen sivu. Ohjelmalistaus \ref{alg:Monadin-kayttoa}
-demonstroi vielä monadin käyttöä.
-
-\begin{algorithm}[tbh]
-\begin{minted}{haskell}
-main =
-return "Your name:" >>=
-putStr >>=
-\_ -> getLine >>=
-\n -> putStrLn ("Hey " ++ n)
-\end{minted}
-
-\caption{Monadin käyttöä.\label{alg:Monadin-kayttoa}}
-\end{algorithm}
-
+Esimerkki liitedokumentista, jätetty paikalleen mikäli liitteitä on tarve lisätä.
 
 \appchapter{Liitedokumentti 2}
 
