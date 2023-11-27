@@ -9,6 +9,9 @@
 \setcounter{tocdepth}{2}
 \usepackage{float}
 \usepackage[caption=false]{subfig}
+\usepackage{graphicx}  % For \resizebox
+\usepackage{array}     % For adjusting column widths
+\usepackage{lscape}    % For landscape environment
 
 % Define the algorithm environment
 %\makeatletter
@@ -43,7 +46,7 @@
 % \listoffigures
 
 % if you want a list of tables
-% \listoftables
+\listoftables
 
 % if you want a list of acronyms
 \listofacronyms
@@ -81,8 +84,50 @@ page counting to work!
 \end{comment}
 
 
-\appchapter{Liitedokumentti}
+\appchapter{Yleistä raportointityökaluista}
 
-Esimerkki liitedokumentista. Jätetty paikalleen mikäli liitteitä on tarve lisätä.
+\begin{landscape}
+\begin{table}
+    \centering
+    \scriptsize  % Adjust font size to scriptsize
+    \resizebox{\linewidth}{!}{%
+        \begin{tabular}{|p{2cm}|p{2cm}|p{2.5cm}|p{2cm}|p{3cm}|p{2cm}|}
+            \hline
+            \bfseries Raportointi-työkalu & \bfseries Lisenssi & \bfseries Datalähde & \bfseries Ohjelmointi-kieli & \bfseries Raporttipohjien konfigurointi & \bfseries Asennus \\ \hline
+            ActiveReportsJS & kaupallinen & JSON & JavaScript & UI /JSON & paikallinen \\ \hline
+            SAP Business Objects & kaupallinen & XML ja JSON & Java & UI & paikallinen \\ \hline
+            SAP Crystal Reports & kaupallinen & tiedostot mm. XLSX, TXT, XML ja tietokannat (SQL) & Java & UI & paikallinen \\ \hline
+            Oracle BI Publisher & kaupallinen & & & & \\ \hline
+            JasperReports & avoin lähdekoodi, mahdollisuus kaupalliseen lisenssiin & JavaBeans, Java object, XML ja mukautetut tietolähteet & Java & UI / XML tai .jasper & paikallinen \\ \hline
+            BIRT Project & avoin lähdekoodi & XML, TXT ja tietokannat (SQL) & Java & UI / XML & paikallinen \\
+            \hline
+        \end{tabular}%
+    }
+    \captionsetup{skip=6pt}  % Adjust caption spacing
+    \caption{Yleistä raportointityökaluista. \textit{Kommentoi taulukkoa hieman tässä!}}
+\end{table}
+\end{landscape}
+
+\appchapter{Raportointityökalujen ulostuloformaatit}
+
+\begin{landscape}
+\begin{table}
+    \centering
+    \scriptsize  % Adjust font size to scriptsize
+    \resizebox{\linewidth}{!}{%
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+        \hline
+        \bfseries Raportointityökalu & \bfseries PDF (.pdf) & \bfseries XLSX (.xlsx, .xls) & \bfseries HTML (.html) & \bfseries Word (.docx, .rtf) & \bfseries RPT (.rpt) \\ \hline
+        ActiveReportsJS & x & & x & & \\ \hline
+        SAP BusinessObjects & x & x & & x & x \\ \hline
+        SAP Crystal Reports & x & x & x & x & x \\ \hline
+        JasperReports & x & x & x & x & \\ \hline
+        BIRT Project & x & x & x & x & \\ \hline
+    \end{tabular}%
+    }
+    \captionsetup{skip=6pt}  % Adjust caption spacing
+    \caption{Raportointityökalujen ulostuloformaatit. \textit{Kommentoi taulukkoa hieman tässä!}}
+\end{table}
+\end{landscape}
 
 \end{document}

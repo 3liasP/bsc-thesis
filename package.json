@@ -1,0 +1,47 @@
+{
+  "devDependencies": {
+    "prettier": "^3.1.0",
+    "prettier-plugin-latex": "^2.0.1"
+  },
+  "name": "bsc-thesis",
+  "description": "BSc Thesis on Reporting Tools and Engines written in LaTeX",
+  "version": "0.5.0",
+  "main": "index.js",
+  "dependencies": {
+    "bail": "^2.0.2",
+    "color": "^4.2.3",
+    "color-convert": "^2.0.1",
+    "color-name": "^1.1.4",
+    "color-string": "^1.9.1",
+    "extend": "^3.0.2",
+    "is-arrayish": "^0.3.2",
+    "is-buffer": "^2.0.5",
+    "is-plain-obj": "^4.1.0",
+    "simple-swizzle": "^0.2.2",
+    "trie-prefix-tree": "^1.5.1",
+    "trough": "^2.1.0",
+    "unified": "^10.1.2",
+    "unist-util-stringify-position": "^3.0.3",
+    "vfile": "^5.3.7",
+    "vfile-message": "^3.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified here!\" && exit 1",
+    "prettier": "prettier --plugin=prettier-plugin-latex"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3liasP/bsc-thesis.git"
+  },
+  "keywords": [
+    "latex",
+    "thesis",
+    "bsc"
+  ],
+  "author": "3liasP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3liasP/bsc-thesis/issues"
+  },
+  "homepage": "https://github.com/3liasP/bsc-thesis#readme"
+}

@@ -2,6 +2,7 @@ $xdvipdfmx = "xdvipdfmx -z 0 -o %D %O %S";
 $dvi_mode = 0;
 $postscript_mode = 0;
 $hash_calc_ignore_pattern{'timestamp'} = '^';
+$pdflatex = "pdflatex -synctex=1 -halt-on-error %O %S"; 
 
 # https://tex.stackexchange.com/questions/1226/how-to-make-latexmk-use-makeglossaries
 # https://overleaf.com/learn/how-to/How_does_Overleaf_compile_my_project%3F
