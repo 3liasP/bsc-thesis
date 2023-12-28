@@ -64,11 +64,17 @@ Raportointimoottorin palvelinympäristöksi valiutui lopulta Sovelia PLM:ssä jo
 
 Datalähteenä Sovelia PLM:n uusi raportointimoottori käyttää Node.js pohjaisena JSONia, joka oli käytössä myös muissa tarkastelluissa raportointityökaluissa. Luvussa \ref{Nykyisten yleiskuva} todettiin JSONin olevan hyvä valinta hierarkkisen PLM-datan tallentamiseen. Luvun \ref{Raportointimoottorin rakenne ja prosessi} alaluvussa koskien logiikkatasoa huomattiin JSONin olevan nopeampi verrattuna vanhempaan XML-standardiin \cite{nurseitov_comparison_nodate}. Uusi raportointityökalu hyödyntää lähdedatan hankkimisessa Sovelia PLM-järjestelmän olemassa olevaa hakumoottoria, joka palauttaa itsessään JSON-muotoista dataa, joten muuntamisvaihetta erilliseen dataformaattiin ei tarvita.
 
-% Kuva raporteista? Esim. Scubalight BOM PDF ja Excel?
+\begin{figure}[tbh]
+\includegraphics[width=1\textwidth]{img/report.png}
+\caption{Kuvakaappaus Sovelia PLM:n raportointimoottorin tuottamasta BOM-raportista PDF-muodossa\label{fig:report}}
+\end{figure}
 
 Sovelia PLM:n uusi raportointityökalu tuottaa raportteja PDF-, Excel ja ZIP-muodoissa eli se tukee tarkasteltujen raportointityökalujen suosituimpia formaatteja. PDF-raportit tarjoavat taulukoidun tuotedatan lisäksi myös piirakkakuvaajia tuoterakenteen eri tietokenttien arvojen jakaumasta, Excel-raportit mahdollistavat rakenteellisen esittämisen tasoittain ja tarjoavat laskentamahdollisuuksia. ZIP-raportit ovat taas kokoavat tuoterakenteesta useita PDF- tai Excel-raportteja ja lisäävät arkistoon myös tuoteobjektien liitetiedostoja, kuten piirustuksia. Uusi raportointimoottori tukee myös HTML-raportteja, mutta ne eivät kuulu ensimmäisen version vaatimusmäärittelyyn, eivätkä siten ole osa ensimmäistä julkaistavaa versiota.
 
-% Kuva käyttöliittymästä?
+\begin{figure}[tbh]
+\includegraphics[width=1\textwidth]{img/RAT.png}
+\caption{Kuvakaappaus Sovelia PLM:n raportointityökalun Web-käyttöliittymän kehitysversiosta\label{fig:RAT}}
+\end{figure}
 
 Raporttipohjien konfigurointi tapahtuu uudella raportointityökalulla tapahtuu Sovelia PLM:n web-käyttöliittymässä pääkäyttäjän toimesta. Käyttöliittymässä voidaan luoda, muokata ja poistaa raportteja, sekä säätää interaktiivisten valikoiden avulla esimerkiksi tietokentät, joista muodostetaan raportin kuvaajat ja taulukot. Raportointimoottori osaa myös laskea lisäkenttiä, kuten esimerkiksi osien kokonaissummia tuoterakenteessa. Tuoterakenteista voidaan myös suodattaa pois määritellyn ominaisuuden mukaisesti tuoteobjekteja, tai raportissa esitettävä tuoterakenne voidaan asettaa koostumaan vain tietyn ominaisuuden omaavista tuoteobjekteista. ZIP-raporttipaketteihin voidaan valita halutut tuoteobjektien liitetiedostojen tiedostomuodot. Myös PDF-raportteihin on mahdollista liittää tuotteiden ja osien piirustuksia PDF-muodossa. ZIP-paketin "aliraportiksi" voidaan valita mikä tahansa järjestelmään konfiguroitu Excel- tai PDF-raportti. Aliraportilla tarkoitetaan tässä raporttia, joka ajetaan käyttöliittymässä annettujen kriteerien mukaisesti tuoterakenteen eri alirakenteille tai osille.
 
@@ -76,5 +82,5 @@ Raporttipohjien konfigurointi tapahtuu uudella raportointityökalulla tapahtuu S
 
 \subsubsection{Uuden raportointityökalun tulevaisuus}
 
-Uusi raportointimoottori Node.js -palvelimella on osoittautunut testausvaiheessa tehokkaaksi ja nopeaksi keinoksi muodostaa raportteja. Suoritusajat ovat huomattavasti vanhaa raportointityökalua nopeampia ja muistinkäyttö palvelimella on vähäisempää. Konfigurointia on pyritty tekemään loppukäyttäjille helpommaksi tarjoamalla graafinen web-käyttöliittymä raporttien konfigurointiin ja raportteja voidaan luoda suoraan Sovelia PLM:n valikoista. Tulevaisuuden ominaisuuksina on tarkoitus kehittää graafinen suunnittelutyökalu PDF-raporteille, lähettää monitorointidataa raportointimoottorin suorituskyvystä sekä tarjota loppukäyttäjille enemmän mahdollisuuksia vaikuttaa raporttien ulkoasuun.
+Uusi raportointimoottori Node.js -palvelimella on osoittautunut testausvaiheessa tehokkaaksi ja nopeaksi keinoksi muodostaa raportteja. Suoritusajat ovat huomattavasti vanhaa raportointityökalua nopeampia ja muistinkäyttö palvelimella on vähäisempää. Konfigurointia on pyritty tekemään loppukäyttäjille helpommaksi tarjoamalla graafinen Web-käyttöliittymä raporttien konfigurointiin ja raportteja voidaan luoda suoraan Sovelia PLM:n valikoista. Tulevaisuuden ominaisuuksina on tarkoitus kehittää graafinen suunnittelutyökalu PDF-raporteille, lähettää monitorointidataa raportointimoottorin suorituskyvystä sekä tarjota loppukäyttäjille enemmän mahdollisuuksia vaikuttaa raporttien ulkoasuun.
 
