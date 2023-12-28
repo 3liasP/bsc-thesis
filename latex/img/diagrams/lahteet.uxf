@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>250</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>UTU Volter
+bg=#cfe2f3
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>320</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Google Scholar
+bg=#cfe2f3
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>260</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>116
+lt=&lt;&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>160.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>390</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Google
+bg=#cfe2f3
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>320</y>
+      <w>180</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>85
+lt=&lt;&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>350</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>32
+lt=&lt;&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>300</y>
+      <w>170</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Rajaus perustuen
+otsikkoon ja 
+tiivistelmään
+bg=#cfe2f3
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>300</y>
+      <w>170</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Rajaus perustuen
+koko artikkeliin
+bg=#cfe2f3
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>300</y>
+      <w>170</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Tutkielmassa
+höydynnetyt lähteet
+bg=#cfe2f3
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>320</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>73
+lt=&lt;&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>80.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>320</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>41
+lt=&lt;&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>70.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>270</x>
+      <y>210</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Aiheeseen liittyvät lähteet:
+style=wordwrap
+halign=center
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
