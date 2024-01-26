@@ -10,20 +10,14 @@ Raportointityökalu voidaan nähdä yhtenä PLM järjestelmälle lisäarvoa tuot
 
 PLM-järjestelmien tietomallit voidaan jakaa dokumentti- ja relaatiodatapohjaisiin tietorakenteisiin. \cite{david_what_2016} Koska Sovelia PLM -järjestelmä perustuu relaatiodatapohjaiseen tietomalliin, myös tässä tutkielmassa käsitellään PLM-järjestelmän raportointia nimenomaan relaatiodatan pohjalta. Kehitettävä uusi raportointityökalu integroituu osaksi Sovelian nykyistä lähdekoodia ja sen palvelinkomponentteja. Ohjelmakokonaisuus koostu palvelinkomponentista, raportointimoottorista, joka tuottaa raporttitiedoston raportoinnin kohteena olevasta objektista, sekä konfigurointityökalusta, jonka avulla järjestelmän pääkäyttäjä voi muokata raporttien ulkonäköä ja rakennetta.
 
-\subsubsection{Tutkimuskysymykset}
+\textbf{Tämän työn tutkimuskysymykset ovat:}
 \begin{itemize}
 \item[\textbf{TK1}] Miten PLM-järjestelmät ja raportointityökalut toimivat yhdessä?
 \item[\textbf{TK2}] Millaisia ovat nykyiset raportointityökalut?
 \item[\textbf{TK3}] Mitä tulee ottaa huomioon raportointityökalua kehittäessä osaksi PLM-järjestelmää?
 \end{itemize}
 
-\subsubsection{Tutkimusmenetelmät}
-\begin{itemize}
-\item Kirjallisuusanalyysi
-\item Tapaustutkimus uuden raportointityökalun kehittämisestä
-\end{itemize}
-
-Jotta kirjallisuusanalyysi tutkimuskysymysten perusteella voitaisiin toteuttaa, tulee ensin tarkastella näiden hakumenetelmiä, joilla tämän tutkimuksen lähteet ovat kerätty. Yleisellä tasolla käytetyt lähteet voidaan jakaa akateemisiin tutkimuksiin ja artikkelihin sekä yritysten tuottamiin julkaisuihin. Tässä tutkielmassa lähteinä käytetyt akateemiset julkaisut löydettiin pääasiallisesti hyödyntämällä Turun Yliopiston kirjaston \textit{UTU Volter}-järjestelmää, joka kerää Turun Yliopiston kirjaston aineistot yhteen tietokantaan. Osa tutkielman akateemisista lähteistä löydettiin myös hyödyntämällä \textit{Google Scholaria}. \textit{Googlea} hyödynnettiin pääasiassa yrityslähteiden löytämiseen. Yrityslähteitä tässä tutkielmassa ovat esimerkiksi PLM-järjestelmiä tarjoavien yritysten kirjoittamat artikkelit PLM:n ja raportoinnin yhteydestä. Tiedonhaussa käytettiin hakusanoja ”PLM” tai ”Product Lifecycle Management” ja "Business Intelligence" tai "reporting". Myös näiden yhdistelmiä ja muita sanamuotoja hyödynnettiin, esimerkiksi "report engine" tai "reporting tool". Alla olevassa kaaviossa on eritelty käytettyjä lähteitä ja niiden lukumääriä tarkemmin.
+Jotta kirjallisuusanalyysi tutkimuskysymysten perusteella voitaisiin toteuttaa, tulee ensin tarkastella näiden hakumenetelmiä, joilla tämän tutkimuksen lähteet ovat kerätty. Yleisellä tasolla käytetyt lähteet voidaan jakaa akateemisiin tutkimuksiin ja artikkelihin sekä yritysten tuottamiin julkaisuihin. Tässä tutkielmassa lähteinä käytetyt akateemiset julkaisut löydettiin pääasiallisesti hyödyntämällä Turun Yliopiston kirjaston \textit{UTU Volter}-järjestelmää, joka kerää Turun Yliopiston kirjaston aineistot yhteen tietokantaan. Osa tutkielman akateemisista lähteistä löydettiin myös hyödyntämällä \textit{Google Scholaria}. \textit{Googlea} hyödynnettiin pääasiassa yrityslähteiden löytämiseen. Yrityslähteitä tässä tutkielmassa ovat esimerkiksi PLM-järjestelmiä tarjoavien yritysten kirjoittamat artikkelit PLM:n ja raportoinnin yhteydestä. Tiedonhaussa käytettiin hakusanoja ”PLM” tai ”Product Lifecycle Management” ja "Business Intelligence" tai "reporting". Myös näiden yhdistelmiä ja muita sanamuotoja hyödynnettiin, esimerkiksi "report engine" tai "reporting tool". Kuvassa \ref{fig:Lahteet} on eritelty käytettyjä lähteitä ja niiden lukumääriä tarkemmin.
 
 \begin{figure}[tbh]
 \includegraphics[width=1\textwidth]{img/lahteet.png}
